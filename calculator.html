@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+    }
+    .calci1{
+        display: flex;
+        flex-direction: row;
+        
+    }
+   
+
+    input[type="button"]:hover{
+        transform: scale(1.2);
+    }
+
+    input[type="button"]:active{
+        transform: scale(0.8);
+    }
+    
+    input[type="button"]{
+        margin: 10px;
+        border-radius: 120px;
+        background-color: gold;
+        outline: 0;
+        border: 0;
+     color: rgb(255, 255, 255);
+   
+        padding: 10px 5px;
+        width: 60px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    }
+   .display{
+    display: grid;
+   
+    }
+    input[type="text"]{        
+        margin: 10px;
+        width: 88.46%;
+        padding: 15px 15px 15px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: right;
+        border-color:gold ;
+        opacity: 1;
+        color: rgb(255, 0, 0);
+        outline: 0;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        text-transform: capitalize;
+        margin: auto;
+        background-color: rgb(9, 38, 88);
+        
+         border: 1px solid rgb(255, 255, 255); 
+        border-radius: 15px;
+        width: fit-content;
+        height: fit-content;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+</style>
+<script>
+ 
+    function fc(){
+        var n=document.getElementById('display').value;
+    let fc=1;
+    for(let i=1;i<=n;i++){
+    fc=fc*i;
+    }
+    return fc;
+}
+function tan(){
+    var a=document.getElementById('display').value;
+    let b=1/Math.tan(a);
+    return b;
+}
+
+    
+</script>
+
+<body >
+    <form action="" class="container">
+   <div class="display">
+    <input type="text" id="display" text-color="red" name="display">
+    </div>
+    <div class="calci1" >
+         <input type="button" value="   ln  "onclick="display.value=Math.log(display.value)"> 
+        <input type="button" value="sin "  onclick="display.value=Math.sin(display.value)">
+        <input type="button" value=" e " onclick="display.value= Math.exp(display.value)">
+        <input type="button" value="7" onclick="display.value+= '7'"> 
+        <input type="button" value="8" onclick="display.value+= '8'">
+        <input type="button" value="9"  onclick="display.value+= '9'">
+        <input type="button" value="*"  onclick="display.value+= '*'">
+    </div>
+    <div class="calci1">
+        <input type="button" value="cbr " onclick="display.value=Math.cbrt(display.value)">
+        <input type="button" value="cos "  onclick="display.value=Math.cos(display.value)">
+        <input type="button" value=" tan "  onclick="display.value=Math.tan(display.value)">
+        <input type="button" value="4"  onclick="display.value+= '4'">
+        <input type="button" value="5"  onclick="display.value+= '5'">
+        <input type="button" value="6"  onclick="display.value+= '6'">
+        <input type="button" value="+"  onclick="display.value+= '+'">
+    </div>
+    <div class="calci1">
+        <input type="button" value="square"   onclick="display.value=display.value*display.value">
+        <input type="button" value="x!" id="value" name="value"  onclick="display.value=fc()">
+        <input type="button" value="clear"  onclick="display.value= ''"> 
+    <input type="button" value="1"  onclick="display.value+= '1'">
+    <input type="button" value="2"  onclick="display.value+= '2'">
+    <input type="button" value="3"  onclick="display.value+= '3'">
+    <input type="button" value=" - "  onclick="display.value+= '-'">
+</div>
+
+
+<div class="calci1">
+    <input type="button" value="sqrt"  onclick="display.value=Math.sqrt(display.value)">
+    <input type="button" value="cube"  onclick="display.value=display.value*display.value*display.value">
+    <input type="button" value="cancel"  onclick="display.value=display.value.toString().slice(0,-1)">
+    <input type="button" value="ans"  onclick="display.value=eval(display.value)">
+    <input type="button" value="0"  onclick="display.value+= '0'">
+    <input type="button" value="."  onclick="display.value+= '.'">
+    <input type="button" value="/"  onclick="display.value+= '/'">
+</div>
+</form>
+<script>
+    function sin1(){
+  display.value.Math.sin(display.value);
+    }
+</script>
+</body>
+</html>
